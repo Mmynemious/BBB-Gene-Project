@@ -25,3 +25,17 @@ To reconstruct the full dataset locally, run:
 
 ```bash
 cat processed/Munji2019_part_* > processed/Munji2019_cleaned.csv
+
+
+### Wälchli2024
+- **File:** `processed/Waelchi2024_cleaned.csv` (split if >2 GB)
+- **Source:** GEO accession GSE12293 (Affymetrix GPL570 platform)
+- **Description:** Gene expression matrix comparing neuronal and endothelial transcriptomes in primates.
+- **Cleaning steps:**
+  - Loaded GEO series matrix (`.txt`)
+  - Mapped probe IDs to gene symbols using GPL570 annotation
+  - Removed probes without gene symbols
+  - Collapsed duplicates
+  - Standardized sample metadata
+- **Rationale:** Provides direct endothelial vs. neuronal transcriptome comparisons, critical for BBB gene enrichment analysis.
+
